@@ -65,9 +65,13 @@ ComplementaryFilterROS::ComplementaryFilterROS(
         }
     }
 
-    // Register IMU raw data subscriber.
+    // // Register IMU raw data subscriber.
     imu_subscriber_.reset(new ImuSubscriber(
         nh_, ros::names::resolve("imu") + "/data_raw", queue_size));
+    // Register IMU raw data subscriber for /camera/imu topic.
+    // imu_subscriber_.reset(new ImuSubscriber(
+    //     nh_, ros::names::resolve("/camera/imu"), queue_size));
+
 
     // Register magnetic data subscriber.
     if (use_mag_)
