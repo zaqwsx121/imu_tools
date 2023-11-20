@@ -110,7 +110,7 @@ void ComplementaryFilterROS::initializeParams()
     if (!nh_private_.getParam("reverse_tf", reverse_tf_)) reverse_tf_ = false;
     if (!nh_private_.getParam("constant_dt", constant_dt_)) constant_dt_ = 0.0;
     if (!nh_private_.getParam("publish_debug_topics", publish_debug_topics_))
-        publish_debug_topics_ = false;
+        publish_debug_topics_ = true;
     if (!nh_private_.getParam("gain_acc", gain_acc)) gain_acc = 0.01;
     if (!nh_private_.getParam("gain_mag", gain_mag)) gain_mag = 0.01;
     if (!nh_private_.getParam("do_bias_estimation", do_bias_estimation))

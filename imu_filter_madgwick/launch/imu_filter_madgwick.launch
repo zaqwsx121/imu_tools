@@ -2,8 +2,12 @@
 <launch>
   #### Nodelet manager ######################################################
 
-  <node pkg="nodelet" type="nodelet" name="imu_manager"
-    args="manager" output="screen" />
+  <!-- <node pkg="nodelet" type="nodelet" name="imu_manager"
+    args="manager" output="screen" /> -->
+  <node pkg="nodelet" type="nodelet" name="imu_manager" args="manager" output="screen">
+    
+
+  </node>
 
   #### IMU Driver ###########################################################
 
@@ -12,6 +16,8 @@
     output="screen">
 
     <param name="publish_tf" value="false"/>
-
+    <param name="world_frame" value="enu"/>
+    <param name="use_mag" value="false"/>
+    <remap from="imu/data_raw" to="/camera/imu"/>
   </node>
 </launch>
